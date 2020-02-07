@@ -1,5 +1,4 @@
-#ifndef COMPAREREPORT_H
-#define COMPAREREPORT_H
+#pragma once
 
 #include <QDialog>
 
@@ -19,13 +18,9 @@ public:
     void setCompareTables(const QString &source, const QString &check);
 
 private slots:
-
     void on_pushButtonSaveMatches_clicked();
-
     void on_pushButtonSaveMisses_clicked();
 
 private:
     Ui::CompareReport *ui;
 };
-
-#endif // COMPAREREPORT_H

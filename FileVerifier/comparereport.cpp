@@ -8,7 +8,6 @@
 #include <QDir>
 #include <QMessageBox>
 
-
 CompareReport::CompareReport(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CompareReport)
@@ -39,17 +38,16 @@ void CompareReport::setCompareTables(const QString &source, const QString &check
     ui->labelSourceTable->setText(source);
 }
 
-
 void CompareReport::on_pushButtonSaveMatches_clicked()
 {
-    QString fn=QFileDialog::getSaveFileName(this,tr("Save Matches"),QDir::homePath());
-    if(!fn.isEmpty())
+    QString fn = QFileDialog::getSaveFileName(this, tr("Export matches..."), QDir::homePath());
+    if (!fn.isEmpty())
     {
         QFile f(fn);
         QTextStream ts(&f);
-        if(!f.open(QIODevice::ReadWrite))
+        if (!f.open(QIODevice::ReadWrite))
         {
-            QMessageBox::warning(this,tr("IO ERROR"),QString(tr("could not write to selected file %1")).arg(fn));
+            QMessageBox::warning(this, tr("Error"), QString(tr("Could not write to selected file %1")).arg(fn));
             return;
         }
         ts << ui->plainTextEditMatches->toPlainText();
@@ -60,14 +58,14 @@ void CompareReport::on_pushButtonSaveMatches_clicked()
 
 void CompareReport::on_pushButtonSaveMisses_clicked()
 {
-    QString fn=QFileDialog::getSaveFileName(this,tr("Save Misses"),QDir::homePath());
-    if(!fn.isEmpty())
+    QString fn = QFileDialog::getSaveFileName(this, tr("Export misses..."), QDir::homePath());
+    if (!fn.isEmpty())
     {
         QFile f(fn);
         QTextStream ts(&f);
-        if(!f.open(QIODevice::ReadWrite))
+        if (!f.open(QIODevice::ReadWrite))
         {
-            QMessageBox::warning(this,tr("IO ERROR"),QString(tr("could not write to selected file %1")).arg(fn));
+            QMessageBox::warning(this, tr("Error"), QString(tr("Could not write to selected file %1")).arg(fn));
             return;
         }
         ts << ui->plainTextEditMatches->toPlainText();

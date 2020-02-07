@@ -6,12 +6,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>787</width>
+    <height>531</height>
    </rect>
-  </property>
-  <property name="windowTitle">
-   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -27,23 +24,20 @@
         </property>
        </widget>
       </item>
-      <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
      </layout>
     </item>
     <item>
      <widget class="QTableView" name="tableView"/>
+    </item>
+    <item>
+     <widget class="QProgressBar" name="progressBar">
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -52,30 +46,25 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>787</width>
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuFile">
+   <widget class="QMenu" name="menuDb">
     <property name="title">
-     <string>File</string>
+     <string>Database</string>
     </property>
-    <widget class="QMenu" name="menuOpen">
-     <property name="title">
-      <string>Open</string>
-     </property>
-     <addaction name="actionFile_s"/>
-     <addaction name="actionDirectory"/>
-    </widget>
-    <addaction name="menuOpen"/>
-    <addaction name="actionDatabase"/>
+    <addaction name="actionDbNew"/>
+    <addaction name="actionDbOpen"/>
+    <addaction name="separator"/>
+    <addaction name="actionE_xit"/>
    </widget>
    <widget class="QMenu" name="menuVerify">
     <property name="title">
      <string>Verify</string>
     </property>
-    <addaction name="actionFile"/>
-    <addaction name="actionAll_files"/>
+    <addaction name="actionVerifyFile"/>
+    <addaction name="actionVerifyDirectory"/>
    </widget>
    <widget class="QMenu" name="menuExport">
     <property name="title">
@@ -83,25 +72,24 @@
     </property>
     <addaction name="actionCurrent_Table"/>
    </widget>
-   <addaction name="menuFile"/>
+   <widget class="QMenu" name="menuHash">
+    <property name="title">
+     <string>Hash</string>
+    </property>
+    <addaction name="actionHashFile"/>
+    <addaction name="actionHashDirectory"/>
+   </widget>
+   <addaction name="menuDb"/>
+   <addaction name="menuHash"/>
    <addaction name="menuVerify"/>
    <addaction name="menuExport"/>
   </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionFile_s">
+  <action name="actionHashFile">
    <property name="text">
     <string>File(s)</string>
    </property>
   </action>
-  <action name="actionDirectory">
+  <action name="actionHashDirectory">
    <property name="text">
     <string>Directory</string>
    </property>
@@ -111,24 +99,34 @@
     <string>Set file filter</string>
    </property>
   </action>
-  <action name="actionDatabase">
+  <action name="actionVerifyFile">
    <property name="text">
-    <string>Database</string>
+    <string>File(s)</string>
    </property>
   </action>
-  <action name="actionFile">
+  <action name="actionVerifyDirectory">
    <property name="text">
-    <string>File</string>
-   </property>
-  </action>
-  <action name="actionAll_files">
-   <property name="text">
-    <string>All files</string>
+    <string>Directory</string>
    </property>
   </action>
   <action name="actionCurrent_Table">
    <property name="text">
     <string>Current Table</string>
+   </property>
+  </action>
+  <action name="actionDbNew">
+   <property name="text">
+    <string>New...</string>
+   </property>
+  </action>
+  <action name="actionDbOpen">
+   <property name="text">
+    <string>Open...</string>
+   </property>
+  </action>
+  <action name="actionE_xit">
+   <property name="text">
+    <string>E&amp;xit</string>
    </property>
   </action>
  </widget>

@@ -1,5 +1,4 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 #include <QMainWindow>
 #include <QStringList>
@@ -23,30 +22,37 @@ public:
 
 private slots:
 
-    void on_actionFile_s_triggered();
-
-    void on_actionDirectory_triggered();
-
-
-    void on_actionDatabase_triggered();
-
     void on_comboBoxTables_activated(const QString &arg1);
-
-    void on_actionFile_triggered();
-
-    void on_actionAll_files_triggered();
 
     void on_actionCurrent_Table_triggered();
 
-private:
-    void m_updateEntryList(const QStringList &l);
-    bool setupDatabase();
-    void compareHashes(const QString &checkTable,const QString &sourceTable);
-    Ui::MainWindow *ui;
-    QStringList m_entryList;
-    QProgressBar *m_PBar;
-    QSqlDatabase db;
-    QSqlTableModel *m_model;
-};
+    void on_actionDbNew_triggered();
 
-#endif // MAINWINDOW_H
+    void on_actionDbOpen_triggered();
+
+    void on_actionHashFile_triggered();
+
+    void on_actionHashDirectory_triggered();
+
+    void on_actionVerifyFile_triggered();
+
+    void on_actionVerifyDirectory_triggered();
+
+    void on_actionE_xit_triggered();
+
+private:
+    void updateEntryList(const QStringList &l);
+    void updateDisplay();
+
+    bool hashFiles();
+    bool hashDirectory();
+
+    void compareHashes(const QString &checkTable, const QString &sourceTable);
+
+    Ui::MainWindow *ui;
+
+    QStringList m_EntryList;
+    QSqlDatabase m_Database;
+
+    QSqlTableModel *m_Model;
+};
