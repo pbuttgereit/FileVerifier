@@ -7,9 +7,12 @@ TEMPLATE = app
 
 DEFINES += QT_DEPRECATED_WARNINGS
 
-VERSION = 0.2.0.1
+VERSION = 0.2.1
+DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 RC_ICONS = FileVerifier.ico
+
+RESOURCES = FileVerifier.qrc
 
 SOURCES += \
         comparereport.cpp \
@@ -23,3 +26,4 @@ HEADERS += \
 FORMS += \
         comparereport.ui \
         mainwindow.ui
+        

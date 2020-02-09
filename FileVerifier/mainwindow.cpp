@@ -443,3 +443,20 @@ void MainWindow::on_actionE_xit_triggered()
 {
     close();
 }
+
+void MainWindow::on_actionAbout_triggered()
+{
+    /* Display about */
+    QMessageBox::about(this, tr("About"), QString("<table cellspacing=0 cellpadding=0><tr><td valign=\"top\"><img src=\":/FileVerifier.png\" alt=\"\" />"
+                                                  "</td><td><p>&nbsp;&nbsp;&nbsp;</p></td><td valign=\"top\"><p><b><font size=\"+2\">FileVerifier ") + QString(APP_VERSION) + QString("</font></b>") +
+                       QString("<br /><br />Recursively create and check file hashes.<br />Software is offered without warranty.</p></td></tr></table>") +
+                       QString("<p>Copyright &copy; 2019-2020 P. Buttgereit, B. Martensen<br /><a href=\"https://github.com/bmartensen/FileVerifier\">https://github.com/bmartensen/FileVerifier</a></p>"));
+
+
+}
+
+void MainWindow::on_actionAbout_Qt_triggered()
+{
+    /* Thanks to Qt. */
+    QMessageBox::aboutQt(this, "Qt");
+}

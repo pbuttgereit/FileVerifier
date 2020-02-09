@@ -40,6 +40,10 @@ private slots:
 
     void on_actionE_xit_triggered();
 
+    void on_actionAbout_triggered();
+
+    void on_actionAbout_Qt_triggered();
+
 private:
     void updateEntryList(const QStringList &l);
     void updateDisplay();
