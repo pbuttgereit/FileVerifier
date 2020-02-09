@@ -10,7 +10,7 @@ Now choose *Verify\>Directory* and select the same directory again. As above a n
 
 - For every new file hash that was also found in the initial table an entry is made into the text field "matches" with the hash and the two respective path and file names.
 
-- For those files in the new table that do not have a matching hash (like new files and manipulated files) an according entry is made into the text field "misses". Each of the text fields can be exported to a tab-separated cvs text file (use txt as extension if You want to open it in Excel).
+- For those files in the new table that do not have a matching hash (like new files and manipulated files) an according entry is made into the text field "misses". Each of the text fields can be exported to a tab-separated cvs text file (use txt as extension if you want to open it in Excel).
 
 The same procedure can be done for a selection of files (using *Hash\>File(s)* and *Verify\>File(s)*, respectively). The hashing is performed using the standard QCryptographicHash class for SHA-512 to avoid deploying additional libraries.
 
